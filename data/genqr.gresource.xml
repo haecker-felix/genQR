@@ -1,0 +1,9 @@
+<gresources>
+  <gresource prefix="/org/haecker-felix/genqr">
+    <file>ui/main-window.ui</file>
+    <file>ui/qr-code-box.ui</file>
+    <file>genqr.desktop</file>
+    <file>app-menu.ui</file>
+    <file>ui/style.css</file>
+  </gresource>
+</gresources>

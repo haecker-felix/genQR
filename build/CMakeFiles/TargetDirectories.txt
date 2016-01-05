@@ -1,0 +1,2 @@
+/home/haecker-felix/Dokumente/Projekte/genQR/build/CMakeFiles/genqr.dir
+/home/haecker-felix/Dokumente/Projekte/genQR/build/CMakeFiles/dist.dir

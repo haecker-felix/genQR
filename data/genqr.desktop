@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=genQR
+GenericName=QR Code generator
+Categories=GTK;Utility;
+Exec=genqr
+Icon=application-default-icon
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=genqr
