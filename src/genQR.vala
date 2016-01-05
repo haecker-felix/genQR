@@ -16,7 +16,6 @@
  *    along with genQR.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 using Gtk;
 
 public class genQR : Gtk.Application {
