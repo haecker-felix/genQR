@@ -54,7 +54,7 @@ add_custom_target (dist COMMAND "$CMAKE_MAKE_PROGRAM} package_source")
 find_package ( PkgConfig REQUIRED )
 pkg_check_modules ( DEPS
 	REQUIRED glib-2.0
-	REQUIRED gtk+-3.0>=3.16
+	REQUIRED gtk+-3.0>=3.12
 	REQUIRED libqrencode
 )
 include_directories ( ${DEPS_INCLUDE_DIRS} )
@@ -72,7 +72,7 @@ glib_compile_resources ( RESOURCE_FILE SOURCE data/genqr.gresource.xml )
 ### VALA FILES ###
 find_package ( Vala REQUIRED )
 include ( ValaVersion )
-ensure_vala_version ( "0.20" MINIMUM )
+ensure_vala_version ( "0.22" MINIMUM )
 
 ### Compile ###
 if (CMAKE_BUILD_TYPE MATCHES Debug)
