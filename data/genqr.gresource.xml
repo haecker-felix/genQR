@@ -4,7 +4,7 @@
     <file>ui/qr-code-box.ui</file>
     <file>genqr.desktop</file>
     <file>app-menu.ui</file>
-    <file>icon.png</file>
+    <file>genqr.png</file>
     <file>ui/style.css</file>
   </gresource>
 </gresources>

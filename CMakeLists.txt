@@ -18,11 +18,12 @@
 
 cmake_minimum_required (VERSION 2.8)
 cmake_policy (VERSION 2.8)
-project (genQR)
+project (genqr)
 enable_testing ()
 
 
 # Project info
+set (EXEC_NAME "genqr")
 set (APP_NAME "genQR")
 set (VERSION "0.1")
 set (VERSION_INFO "Alpha")
@@ -80,7 +81,7 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
 endif (CMAKE_BUILD_TYPE MATCHES Debug)
 include ( ValaPrecompile )
 vala_precompile (
-VALA_C genQR
+VALA_C ${EXEC_NAME}
 	src/genQR.vala
 	src/QRCode.vala
 	src/MainWindow.vala
@@ -99,7 +100,15 @@ OPTIONS
 
 # Source files definition
 set ( SRC_FILES ${RESOURCE_FILE} ${VALA_C} )
-
 add_executable ( genqr ${SRC_FILES} )
-
 target_link_libraries ( genqr ${DEPS_LIBRARIES} m )
+
+# Install
+install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/genqr.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/16/genqr.png DESTINATION share/icons/hicolor/16x16/apps)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/24/genqr.png DESTINATION share/icons/hicolor/24x24/apps)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/32/genqr.png DESTINATION share/icons/hicolor/32x32/apps)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/48/genqr.png DESTINATION share/icons/hicolor/48x48/apps)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/64/genqr.png DESTINATION share/icons/hicolor/64x64/apps)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/icons/128/genqr.png DESTINATION share/icons/hicolor/128x128/apps)
