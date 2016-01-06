@@ -1,7 +1,8 @@
 # Build
 bin/
 build/
-.bzr/**
+.bzr/
+
 # Object files
 *.o
 *.ko
