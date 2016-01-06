@@ -78,7 +78,7 @@ public class genQR : Gtk.Application {
 		dialog.copyright = "Copyright © 2016 Felix Häcker";
 		dialog.version = "0.1";
 
-		dialog.license_type = Gtk.License.GPL_3_0_ONLY;
+		//dialog.license_type = Gtk.License.GPL_3_0_ONLY;
 		dialog.wrap_license = true;
 
 		dialog.website = "";
