@@ -73,6 +73,7 @@ public class genQR : Gtk.Application {
 		dialog.documenters = null;
 		dialog.translator_credits = null; 
 
+		dialog.logo_icon_name = "genqr";
 		dialog.program_name = "genQR";
 		dialog.comments = "QR Code Generator";
 		dialog.copyright = "Copyright © 2016 Felix Häcker";

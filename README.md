@@ -1,5 +1,5 @@
 # genQR #
-![Icon](https://raw.githubusercontent.com/haecker-felix/genQR/master/data/icon.png)
+![Icon](https://raw.githubusercontent.com/haecker-felix/genQR/master/data/genqr.png)
 #### *A GTK3 QR Code generator* ####
 
 
