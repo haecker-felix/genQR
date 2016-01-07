@@ -55,7 +55,7 @@ add_custom_target (dist COMMAND "$CMAKE_MAKE_PROGRAM} package_source")
 find_package ( PkgConfig REQUIRED )
 pkg_check_modules ( DEPS
 	REQUIRED glib-2.0
-	REQUIRED gtk+-3.0>=3.10
+	REQUIRED gtk+-3.0>=3.14
 	REQUIRED libqrencode
 )
 include_directories ( ${DEPS_INCLUDE_DIRS} )
