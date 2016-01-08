@@ -63,7 +63,7 @@ public class QRCode : Gtk.DrawingArea {
 
             		cr.save();
 
-            		cr.set_source_rgb(0, 0, 0);
+
 
             		for (int iy = 0; iy < qrcode.width; iy++) {
                 		for (int ix = 0; ix < qrcode.width; ix++) {
@@ -74,6 +74,11 @@ public class QRCode : Gtk.DrawingArea {
 				     * bits are meaningless for us.
 				     */
                     			if ((qrcode.data[iy * qrcode.width + ix] & 1) != 0) {
+                    				cr.set_source_rgb(0, 0, 0);
+                        			cr.rectangle(ix * square_size, iy * square_size, square_size, square_size);
+                        			cr.fill();
+                    			}else{
+                    				cr.set_source_rgb(255, 255, 255);
                         			cr.rectangle(ix * square_size, iy * square_size, square_size, square_size);
                         			cr.fill();
                     			}

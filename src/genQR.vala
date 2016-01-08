@@ -37,8 +37,8 @@ public class genQR : Gtk.Application {
 			CssProvider css = new CssProvider();
 			css.load_from_file(cssfile);
 			StyleContext.add_provider_for_screen(window.screen, css, STYLE_PROVIDER_PRIORITY_APPLICATION);
-		}catch{
-			print("ERROR: style.css not found\n");
+		}catch (Error e){
+			print("ERROR: Cannot load the style.css file\n" + e.message);
 		}
 
 	}
@@ -60,6 +60,8 @@ public class genQR : Gtk.Application {
 		var app_menu = builder.get_object ("appmenu") as GLib.MenuModel;
 
 		set_app_menu (app_menu);
+
+		//Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
         }
 
 	public void show_about_dialog(){
