@@ -22,8 +22,6 @@ On Debian based systems install following packages:
 
     sudo apt-get install build-essential libqrencode3 libqrencode-lib valac-0.24 libvala-0.24-dev cmake pkg-config intltool gnome-icon-theme-symbolic librsvg2-bin
 
-#### Ubuntu PPA ####
-Comming soon...
 
 ### Building ###
  1. `mkdir build && cd build`
@@ -34,7 +32,7 @@ Comming soon...
  1. `sudo make install`
 
 ## License ##
-Valama is distributed under the terms of the GNU General Public License version 3 or later and published by:
+genQR is distributed under the terms of the GNU General Public License version 3 or later and published by:
  * Felix Häcker
 
 ## Credits ##
