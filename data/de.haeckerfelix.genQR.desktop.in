@@ -7,3 +7,4 @@ Icon=genqr.png
 Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=genqr
+Name[de_DE]=de.haeckerfelix.genQR.desktop.in
