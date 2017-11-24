@@ -23,24 +23,13 @@ public class genQR : Gtk.Application {
 	MainWindow window;
 
 	public genQR() {
-		Object(application_id: "org.haecker-felix.genqr", flags: ApplicationFlags.FLAGS_NONE);
+		Object(application_id: "de.haeckerfelix.genQR", flags: ApplicationFlags.FLAGS_NONE);
 	}
 
 	protected override void activate () {
 		window = new MainWindow (this);
 		this.add_window(window);
 		window.show_all();
-
-		// Load the custom CSS Style
-		try{
-			File cssfile = File.new_for_uri("resource:///org/haecker-felix/genqr/ui/style.css");
-			CssProvider css = new CssProvider();
-			css.load_from_file(cssfile);
-			StyleContext.add_provider_for_screen(window.screen, css, STYLE_PROVIDER_PRIORITY_APPLICATION);
-		}catch (Error e){
-			print("ERROR: Cannot load the style.css file\n" + e.message);
-		}
-
 	}
 
 
@@ -56,12 +45,10 @@ public class genQR : Gtk.Application {
 		Quit.activate.connect (quit);
 		add_action (Quit);
 
-		var builder = new Gtk.Builder.from_resource ("/org/haecker-felix/genqr/app-menu.ui");
+		var builder = new Gtk.Builder.from_resource ("/de/haeckerfelix/genqr/app-menu.ui");
 		var app_menu = builder.get_object ("appmenu") as GLib.MenuModel;
 
 		set_app_menu (app_menu);
-
-		//Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
         }
 
 	public void show_about_dialog(){
@@ -73,7 +60,7 @@ public class genQR : Gtk.Application {
 		dialog.artists = null;
 		dialog.authors = null;
 		dialog.documenters = null;
-		dialog.translator_credits = null; 
+		dialog.translator_credits = null;
 
 		dialog.logo_icon_name = "genqr";
 		dialog.program_name = "genQR";
@@ -83,13 +70,10 @@ public class genQR : Gtk.Application {
 
 		//dialog.license_type = Gtk.License.GPL_3_0_ONLY;
 		dialog.wrap_license = true;
-
-		dialog.website = "";
-		dialog.website_label = "GitHub Projektseite";
 		dialog.present ();
 	}
 
-	
+
 	public static int main (string[] args) {
 		genQR app = new genQR ();
 		return app.run (args);

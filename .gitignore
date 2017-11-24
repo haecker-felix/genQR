@@ -1,3 +1,5 @@
+.flatpak-builder
+
 # Build
 bin/
 build/

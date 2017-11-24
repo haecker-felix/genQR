@@ -2,9 +2,7 @@
   <gresource prefix="/org/haecker-felix/genqr">
     <file>ui/main-window.ui</file>
     <file>ui/qr-code-box.ui</file>
-    <file>ui/style.css</file>
-    <file>genqr.desktop</file>
-    <file>app-menu.ui</file>
-    <file>genqr.png</file>
+    <file>de.haeckerfelix.genQR.css</file>
+    <file>ui/app-menu.ui</file>
   </gresource>
 </gresources>

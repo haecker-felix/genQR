@@ -1,7 +1,7 @@
 {
    "app-id":"de.haeckerfelix.genQR",
    "runtime":"org.gnome.Platform",
-   "runtime-version":"3.26",
+   "runtime-version":"master",
    "sdk":"org.gnome.Sdk",
    "command":"genqr",
    "finish-args":[
@@ -15,7 +15,7 @@
       "--filesystem=xdg-run/dconf",
       "--filesystem=~/.config/dconf:ro",
       "--filesystem=host",
-      "--talk-name=ca.desrt.dconf",
+      "--talk-name=ca.desrt.dconf"
    ],
    "modules":[
       {
@@ -23,32 +23,78 @@
          "sources":[
             {
                "type":"git",
-	       "buildsystem" : "cmake",
                "url":"https://github.com/fukuchi/libqrencode",
                "branch":"master"
             }
          ]
       },
       {
-         "name":"qrsvg",
+        "name": "libgee",
+        "build-options" : {
+            "env": {
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+            }
+        },
+        "sources": [
+            {
+                "type": "archive",
+                "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.0.tar.xz",
+                "sha256": "21308ba3ed77646dda2e724c0e8d5a2f8d101fb05e078975a532d7887223c2bb"
+            }
+        ]
+      },
+      {
+         "name":"gxml",
+         "build-options" : {
+            "env": {
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+            }
+        },
          "sources":[
             {
                "type":"git",
-	       "buildsystem" : "meson",
-               "url":"https://gitlab.com/pwmc/qrsvg/tree/master",
+               "url":"https://git.gnome.org/browse/gxml",
+               "branch":"master"
+            }
+         ]
+      },
+      {
+         "name":"gsvg",
+         "build-options" : {
+            "env": {
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+                "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+            }
+        },
+         "buildsystem":"meson",
+         "sources":[
+            {
+               "type":"git",
+               "url":"https://gitlab.com/pwmc/gsvg.git",
+               "branch":"master"
+            }
+         ]
+      },
+      {
+         "name":"qrsvg",
+         "buildsystem":"meson",
+         "sources":[
+            {
+               "type":"git",
+               "url":"https://gitlab.com/haecker-felix/qrsvg.git",
                "branch":"master"
             }
          ]
       },
       {
          "name":"genqr",
-         "buildsystem":"meson",
          "builddir":true,
          "sources":[
             {
                "type":"git",
-               "url":"https://github.com/haecker-felix/genQR",
-               "branch":"master"
+               "url":"https://github.com/haecker-felix/genQR"
             }
          ]
       }

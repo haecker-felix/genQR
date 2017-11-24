@@ -8,7 +8,7 @@ glib = dependency('glib-2.0')
 gobject = dependency('gobject-2.0')
 gio = dependency('gio-2.0')
 gtk = dependency('gtk+-3.0', version : '>=3.14')
-qrencode = dependency('qrencode')
+qrsvg = dependency('qrsvg-0.4')
 
 subdir('data')
 #subdir('po')
