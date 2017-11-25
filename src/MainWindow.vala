@@ -32,6 +32,8 @@ public class MainWindow : ApplicationWindow {
 		Object(application: app);
 
 		qrcode = new QRSvg.QR();
+		qrcode.square_width = 1;
+		qrcode.version = 2;
 		svgbox = new SvgBox();
 
 		CodeBox.add(svgbox);
