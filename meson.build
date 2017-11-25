@@ -11,8 +11,7 @@ gtk = dependency('gtk+-3.0', version : '>=3.14')
 qrsvg = dependency('qrsvg-0.4')
 
 subdir('data')
-#subdir('po')
-#subdir('external')
+subdir('po')
 subdir('src')
 # subdir('tests')
 # TODO: unit tests

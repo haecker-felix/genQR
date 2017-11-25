@@ -1,12 +1,10 @@
 vala_sources = [
 		'genQR.vala',
-		'MainWindow.vala',
-		'QRCode.vala',
-		'QRCodeBox.vala']
+#		'gsvgtk-image.vala',
+		'MainWindow.vala']
 
 vala_args = [
 	'--target-glib=2.38',
-	'--pkg=qrsvg',
 	'--pkg=qrsvg-0.4',
 	'--pkg=posix']
 

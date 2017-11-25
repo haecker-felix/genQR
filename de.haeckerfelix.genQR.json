@@ -83,7 +83,7 @@
          "sources":[
             {
                "type":"git",
-               "url":"https://gitlab.com/haecker-felix/qrsvg.git",
+               "url":"https://gitlab.com/pwmc/qrsvg.git",
                "branch":"master"
             }
          ]

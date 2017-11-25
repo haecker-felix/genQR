@@ -45,7 +45,7 @@ public class genQR : Gtk.Application {
 		Quit.activate.connect (quit);
 		add_action (Quit);
 
-		var builder = new Gtk.Builder.from_resource ("/de/haeckerfelix/genqr/app-menu.ui");
+		var builder = new Gtk.Builder.from_resource ("/de/haeckerfelix/genqr/ui/app-menu.ui");
 		var app_menu = builder.get_object ("appmenu") as GLib.MenuModel;
 
 		set_app_menu (app_menu);
