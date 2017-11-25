@@ -4,5 +4,6 @@
     <file>ui/qr-code-box.ui</file>
     <file>de.haeckerfelix.genQR.css</file>
     <file>ui/app-menu.ui</file>
+    <file>ui/svgbox.ui</file>
   </gresource>
 </gresources>

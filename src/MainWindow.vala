@@ -22,34 +22,29 @@ using Gtk;
 [GtkTemplate (ui = "/de/haeckerfelix/genqr/ui/main-window.ui")]
 public class MainWindow : ApplicationWindow {
 
-	[GtkChild]
-	private Entry TextEntry;
+	[GtkChild] private Entry TextEntry;
+	[GtkChild] private Box CodeBox;
 
-	[GtkChild]
-	private Box CodeBox;
-
+	private QRSvg.QR qrcode;
+	private SvgBox svgbox;
 
         public MainWindow (genQR app) {
 		Object(application: app);
+
+		qrcode = new QRSvg.QR();
+		svgbox = new SvgBox();
+
+		CodeBox.add(svgbox);
+		CodeBox.show_all();
         }
 
 	[GtkCallback]
         private void GenerateButton_clicked (Button button) {
 		if(TextEntry.get_text() != ""){
-			QRSvg.QR code = new QRSvg.QR();
+			qrcode.encode(TextEntry.get_text(), QRSvg.QR.EcQuality.H, QRSvg.QR.CharacterMode.B8, QRSvg.QR.CaseSensitive.YES);
 
-			// QR code erstellen
-			//QRCode code = new QRCode(TextEntry.get_text(), 0, Qrencode.EcLevel.H, Qrencode.Mode.B8, 1);
-
-			// QR Code box erstellen (GUI)
-			//QRCodeBox box = new QRCodeBox(code, this);
-			//box.show();
-
-			// Den neuen QR Code zur Box hinzufügen
-			//CodeBox.add(box);
-
-			// Text wieder löschen
-			//TextEntry.set_text("");
+			svgbox.svg = qrcode.svg;
+			svgbox.render();
 		}
         }
 

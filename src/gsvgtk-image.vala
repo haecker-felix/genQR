@@ -1,7 +1,4 @@
-/* -*- Mode: vala; indent-tabs-mode: nil; c-basic-offset: 2; tab-width: 2 -*- */
-/* window.vala
- *
- * Copyright (C) 2017 Daniel Espinosa <daniel.espinosa@pwmc.mx>
+/* Copyright (C) 2017 Daniel Espinosa <daniel.espinosa@pwmc.mx>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -21,34 +18,35 @@ using GSvg;
 using Gtk;
 using GXml;
 
-[GtkTemplate (ui="/org/gnome/Gsvgtk/gsvgtk-image.ui")]
-public class GSvgtk.Image : Gtk.Grid {
-  private GSvg.Document _svg = null;
-  [GtkChild]
-  private Gtk.Image image;
+[GtkTemplate (ui="/de/haeckerfelix/genqr/ui/svgbox.ui")]
+public class SvgBox : Gtk.Box {
+	private GSvg.Document _svg = null;
+	[GtkChild] private Gtk.Image image;
 
-  public string str {
-    owned get { return (svg as GomDocument).write_string (); }
-    set {
-      if (svg == null) svg = new GSvg.GsDocument ();
-      (svg as GomDocument).read_from_string (str);
-    }
-  }
-  public GSvg.Document svg {
-    get {
-      if (_svg == null) _svg = new GSvg.GsDocument ();
-      return _svg;
-    }
-    set {
-      _svg = value;
-      render ();
-    }
-  }
-  public void render () {
-    var rsvg = new Rsvg.Handle ();
-    rsvg.write (str.data);
-    rsvg.close ();
-    image.pixbuf = rsvg.get_pixbuf ();
-  }
+	public string str {
+		owned get { return (svg as GomDocument).write_string (); }
+		set {
+			if (svg == null) svg = new GSvg.GsDocument ();
+			(svg as GomDocument).read_from_string (str);
+		}
+	}
+
+	public GSvg.Document svg {
+		get {
+			if (_svg == null) _svg = new GSvg.GsDocument ();
+			return _svg;
+		}
+		set {
+			_svg = value;
+			render ();
+		}
+	}
+
+	public void render () {
+		var rsvg = new Rsvg.Handle ();
+		rsvg.write (str.data);
+		rsvg.close ();
+		image.pixbuf = rsvg.get_pixbuf ();
+	}
 }
 
