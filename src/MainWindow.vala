@@ -32,7 +32,7 @@ public class MainWindow : ApplicationWindow {
 		Object(application: app);
 
 		qrcode = new QRSvg.QR();
-		qrcode.square_width = 1;
+		qrcode.square_width = 3;
 		qrcode.version = 2;
 		svgbox = new SvgBox();
 
@@ -47,6 +47,8 @@ public class MainWindow : ApplicationWindow {
 
 			svgbox.svg = qrcode.svg;
 			svgbox.render();
+
+			TextEntry.set_text("");
 		}
         }
 

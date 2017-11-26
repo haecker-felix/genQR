@@ -57,18 +57,13 @@ public class genQR : Gtk.Application {
 		dialog.set_transient_for (window);
 		dialog.set_modal (true);
 
-		dialog.artists = null;
-		dialog.authors = null;
-		dialog.documenters = null;
-		dialog.translator_credits = null;
-
-		dialog.logo_icon_name = "genqr";
+		dialog.logo_icon_name = "de.haeckerfelix.genQR";
 		dialog.program_name = "genQR";
-		dialog.comments = "QR Code Generator\nScanne das Logo!";
-		dialog.copyright = "Copyright © 2016 Felix Häcker";
+		dialog.comments = "QR Code Generator";
+		dialog.copyright = "Copyright © 2017 Felix Häcker";
 		dialog.version = "0.1";
 
-		//dialog.license_type = Gtk.License.GPL_3_0_ONLY;
+		dialog.license_type = Gtk.License.GPL_3_0_ONLY;
 		dialog.wrap_license = true;
 		dialog.present ();
 	}

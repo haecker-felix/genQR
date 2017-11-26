@@ -10,7 +10,6 @@
       <object class="GtkImage" id="image">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="stock">gtk-new</property>
         <property name="pixel_size">192</property>
         <property name="icon_size">6</property>
       </object>

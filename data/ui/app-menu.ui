@@ -4,11 +4,11 @@
   <menu id="appmenu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">Info</attribute>
+        <attribute name="label" translatable="yes">About</attribute>
         <attribute name="action">app.info</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">Beenden</attribute>
+        <attribute name="label" translatable="yes">Quit</attribute>
         <attribute name="action">app.quit</attribute>
       </item>
     </section>
